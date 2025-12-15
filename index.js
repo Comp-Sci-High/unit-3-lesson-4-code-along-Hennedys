@@ -32,11 +32,16 @@ function getRandomIndex(){
 
 // Code Along
 // Write a GET route handler for / that uses .send() to respond with "Welcome to the Raccoon API" 
+app.get("/",(req, res)=> {
+    res.send("Welcome to the Racoon API")
+})
 
 
 // Write a GET route handler for /image that uses .json() to respond with the URL of the first image
-
-
+app.get("/image", (req, res)=>{
+    res.json(data.images[0])
+})
+    
 // Coding Exercises
 // Write a GET route handler for /fact that uses .json() to respond with the URL of the first fact
 
