@@ -44,25 +44,42 @@ app.get("/image", (req, res)=>{
     
 // Coding Exercises
 // Write a GET route handler for /fact that uses .json() to respond with the URL of the first fact
-
+app.get("/fact", (req, res)=>{
+    res.json(data.facts[0])
+})
 
 // Write the route handler for /random/fact that returns a random fact from the data object
 // Call the getRandomIndex() to get a random index
+app.get("/random/fact", (req, res)=>{
+ res.json("data.facts[0]")
+        })
 
 
 // Write the route handler for /random/image that returns a random image from the data object
 // Call the getRandomIndex() to get a random index
+app.get("/random/image", (req, res)=>{
+ res.json("data.images[0]")
+        })
 
 
 // Write the route handler for /api/docs that returns a message describing the two /random endpoints
 // e.g. "The endpoints you can hit are /random/fact for ... and /random/image for ..."
 // Pink: make it nicely formatted with HTML tags
+app.get("/api/docs", (req, res)=> {
+    res.json({
+ "data":{
+"fact" : "Their black 'mask' is thought to help reduce glare and improve their night vision."
+ }
 
+    })
+})
 
 
 // Pink: Write the route handler for /dogs/random and call the Dog CEO API for a random image
 // https://dog.ceo/dog-api/documentation/random
-
+app.get("/dogs/random", (req, res)=>{
+ res.json("https://dog.ceo/dog-api/documentation/random")
+        })
 
 
 app.listen(3000, () => {
